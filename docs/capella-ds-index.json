@@ -1,0 +1,127 @@
+{
+  "$comment": "Generated from real source in cp-ui-v3. Design system lives entirely in the shared npm package @couchbasecloud/ui-platform (pinned at 1.0.0-beta.25 in package.json), NOT in local files under src/. Do not add local tokens.css/Button.tsx/Modal.tsx — extend or consume the package instead.",
+  "source": {
+    "package": "@couchbasecloud/ui-platform",
+    "version": "1.0.0-beta.25",
+    "colorTokensFile": "node_modules/@couchbasecloud/ui-platform/dist/styles/tokens.css",
+    "typographyTokensFile": "node_modules/@couchbasecloud/ui-platform/dist/styles/_typography.css",
+    "tailwindPreset": "node_modules/@couchbasecloud/ui-platform/dist/tailwind.preset.cjs",
+    "tailwindConfigInThisRepo": "tailwind.config.cjs (just does: require('@couchbasecloud/ui-platform/tailwind.preset'))",
+    "spacingLintRule": "eslint-plugin-custom-rules/rules/use-spacing-tokens.cjs (enforces spacing aliases like m-xl, p-md over raw numeric Tailwind classes)"
+  },
+
+  "colorTokens": {
+    "$comment": "All are CSS custom properties, consumed in Tailwind via classes like bg-primary / text-on-background (mapped through tailwind.preset.cjs). ~140 total in tokens.css; grouped below by section comment in the source file.",
+    "overlay": ["--color-overlay"],
+    "background": [
+      "--color-background", "--color-background-2", "--color-on-background-menu",
+      "--color-on-background-active", "--color-on-background-app-bar", "--color-on-background",
+      "--color-on-background-alternate", "--color-on-background-icon-background",
+      "--color-on-background-decoration", "--color-on-background-link", "--color-on-background-link-hover",
+      "--color-on-background-search", "--color-on-background-search-hover", "--color-on-background-search-focus",
+      "--color-on-background-search-prompt", "--color-on-background-search-input",
+      "--color-on-background-iq-insights", "--color-on-background-anchor", "--color-on-light-border",
+      "--color-field-map-border", "--color-on-background-new-badge", "--color-on-light-background-blue",
+      "--color-on-background-selected", "--color-subsunken", "--color-aside-bar-active-bg",
+      "--color-aside-bar-active", "--color-aside-bar-hover-bg", "--color-on-background-disabled-text"
+    ],
+    "primary": ["--color-primary", "--color-primary-hover", "--color-primary-active", "--color-on-primary", "--color-on-primary-alternate", "--color-on-primary-decoration", "--color-on-primary-link", "--color-on-primary-link-hover"],
+    "secondary": ["--color-secondary", "--color-secondary-hover", "--color-secondary-active", "--color-on-secondary", "--color-on-secondary-alternate", "--color-on-secondary-decoration", "--color-on-secondary-link", "--color-on-secondary-link-hover"],
+    "surface": ["--color-surface", "--color-surface-active", "--color-on-surface", "--color-on-surface-alternate", "--color-on-surface-decoration", "--color-on-surface-link", "--color-on-surface-link-hover", "--color-on-surface-slate", "--color-on-subtle"],
+    "information": ["--color-information", "--color-on-information", "--color-on-information-alternate", "--color-on-information-decoration", "--color-on-information-link", "--color-on-information-link-hover", "--color-on-foreground-subtle", "--color-on-foreground-placeholder"],
+    "success": ["--color-success", "--color-on-success", "--color-on-success-alternate", "--color-on-success-decoration", "--color-on-success-link", "--color-on-success-link-hover", "--color-on-success-alter-decoration", "--color-success-2"],
+    "warning": ["--color-warning", "--color-on-warning", "--color-on-warning-alternate", "--color-on-warning-decoration", "--color-on-warning-link", "--color-on-warning-link-hover", "--color-on-warning-border", "--color-on-warning-pane", "--color-on-warning-alter-decoration", "--color-on-warning-secondary-decoration"],
+    "error": ["--color-error", "--color-on-error", "--color-on-error-alternate", "--color-on-error-decoration", "--color-on-error-link", "--color-on-error-link-hover"],
+    "notice": ["--color-notice", "--color-on-notice", "--color-on-notice-alternate", "--color-on-notice-decoration", "--color-on-notice-link", "--color-on-notice-link-hover"],
+    "danger": ["--color-danger", "--color-danger-hover", "--color-danger-active", "--color-on-danger", "--color-on-danger-alternate", "--color-on-danger-decoration", "--color-on-danger-link", "--color-on-danger-link-hover", "--color-on-danger-border", "--color-on-danger-pane", "--color-on-danger-alter-decoration"],
+    "inactive": ["--color-inactive", "--color-on-inactive", "--color-on-light-inactive"],
+    "shadow": ["--color-shadow", "--color-shadow-variant"],
+    "hover": ["--color-hover-button", "--color-focussed-btn"],
+    "disabledText": ["--color-disabled-text", "--color-disabled-text-neo"],
+    "chart": ["--color-chart-1", "--color-chart-2", "--color-chart-3", "--color-chart-4", "--color-chart-5", "--color-chart-6", "--color-chart-7", "--color-chart-8", "--color-chart-9", "--color-chart-10", "--color-chart-11"],
+    "brand": ["--color-brand-primary", "--color-brand-secondary", "--color-brand-tertiary", "--color-appbar-bg", "--color-global-search-bg", "--color-brand-bg", "--color-ai-stars"],
+    "social": ["--color-social-forum", "--color-social-discord"],
+    "workbenchAppBar": ["--color-panel-queue", "--color-panel-queue-hover", "--color-panel-queue-highlight", "--color-workbench-tooltip", "--color-workbench-plan-orient", "--color-workbench-explain-node", "--color-workbench-explain-node-expensive-1", "--color-workbench-explain-node-expensive-2", "--color-workbench-explain-node-expensive-3", "--color-workbench-explain-node-hover", "--color-workbench-explain-node-link", "--color-wb-explain-tooltip-border-top", "--color-faded-white", "--color-outline-gray", "--color-mid-gray", "--color-editor-black"],
+    "dataGrid": ["--color-master-row-border"],
+    "wizard": ["--color-wizard-stepper", "--color-wizard-line", "--color-wizard-active-step-border"],
+    "accordion": ["--color-accordion"],
+    "border": ["--color-border-light", "--color-search-border", "--color-border-on-primary", "--outline-subtlest", "--outline-input"],
+    "neoButton": ["--color-neo-primary", "--color-neo-primary-hover", "--color-neo-primary-active"]
+  },
+
+  "typographyTokens": {
+    "$comment": "NOT named --font-*. Shorthand CSS font declarations (weight/size/line-height/family combined into one custom property).",
+    "display": ["--display-font-family", "--display-small", "--display-medium", "--display-large"],
+    "heading": ["--heading-font-family", "--heading-h1", "--heading-h2", "--heading-h3", "--heading-h4", "--heading-h5"],
+    "text": {
+      "family": "--text-font-family",
+      "sizes": ["t2", "t3", "t4", "t5"],
+      "weights": ["regular", "semibold", "bold"],
+      "pattern": "--text-{size}-{weight} e.g. --text-t2-regular, --text-t3-semibold, --text-t4-bold",
+      "auxiliary": ["--text-t2-line-height", "--text-t2-font-size", "--text-t3-line-height", "--text-t3-font-size", "--text-t4-line-height", "--text-t4-font-size", "--text-t5-line-height", "--text-t5-font-size"]
+    },
+    "fontImport": "Open Sans (Google Fonts), weights 300/400/500/600/700"
+  },
+
+  "spacingScale": {
+    "$comment": "Tailwind spacing aliases from tailwind.preset.cjs, used as m-{key}/p-{key}/gap-{key} etc. Enforced by local eslint rule use-spacing-tokens.cjs — do not use raw Tailwind numeric spacing classes.",
+    "none": "0",
+    "xxs": "0.125rem (2px)",
+    "xs": "0.25rem (4px)",
+    "sm": "0.375rem (6px)",
+    "md": "0.5rem (8px)",
+    "lg": "0.75rem (12px)",
+    "xl": "1rem (16px)",
+    "2xl": "1.25rem (20px)",
+    "3xl": "1.5rem (24px)",
+    "4xl": "2rem (32px)",
+    "5xl": "2.5rem (40px)",
+    "6xl": "3rem (48px)",
+    "7xl": "4rem (64px)",
+    "8xl": "5rem (80px)",
+    "gutter": "2rem",
+    "gutter-sm": "1.5rem",
+    "gutter-lg": "2.5rem",
+    "gutter-2x": "4rem"
+  },
+
+  "button": {
+    "importPath": "@couchbasecloud/ui-platform (components/button)",
+    "typesFile": "node_modules/@couchbasecloud/ui-platform/dist/components/button/button.types.d.ts",
+    "propsUnion": "ButtonProps = DefaultButtonProps | IconOnlyButtonProps",
+    "defaultButtonVariants": ["primary", "primary-table", "secondary", "secondary-fat", "secondary-accordion", "secondary-table", "tertiary", "tertiary-text", "tertiary-icon", "tertiary-icon-black", "quaternary", "quinary", "senary", "danger", "danger-secondary", "danger-secondary-table", "marketing", "quick-start", "show-more", "neo-primary", "neo-secondary"],
+    "slimButtonVariants": ["primary", "secondary", "tertiary", "quaternary", "quinary", "senary", "danger-secondary", "quick-start", "slim", "slim-secondary", "trial-upgrade", "neo-primary", "neo-secondary"],
+    "iconOnlyButtonVariants": ["primary", "secondary", "secondary-error", "secondary-fat", "warning", "danger", "surface", "success", "copy", "accordion", "accordion-secondary", "border", "pendo-question", "header-info", "refresh"],
+    "commonProps": ["icon", "disabledStylesOnly", "groupName", "tooltip", "tooltipPlacement", "iconPosition", "loading", "block", "spinnerSize", "isExtraSlim", "isVertical", "dataAutoId", "isSlimest"],
+    "note": "Defaults are baked into the compiled button.js, not visible in the .d.ts — do not assume a default variant."
+  },
+
+  "dialogModal": {
+    "$comment": "No component literally named Modal. Use Dialog for general modals, ConfirmDialog for confirm/destructive flows.",
+    "components": [
+      {
+        "name": "Dialog",
+        "typesFile": "node_modules/@couchbasecloud/ui-platform/dist/components/dialog/dialog.d.ts",
+        "requiredProps": ["label", "show"],
+        "keyProps": ["title", "message", "onConfirm", "onCancel", "submitLabel", "cancelLabel", "submitVariant", "cancelVariant", "requireConfirmation", "loading", "showSpinner", "errorText", "withForm", "withPortal", "dataAutoId"]
+      },
+      {
+        "name": "ConfirmDialog",
+        "typesFile": "node_modules/@couchbasecloud/ui-platform/dist/components/confirm-dialog/confirm-dialog.d.ts",
+        "requiredProps": ["label"],
+        "keyProps": ["title", "message", "show", "hideClose", "confirmationValue", "isCaseSensitive", "onConfirm", "onCancel", "submitLabel", "cancelLabel", "warningVariant", "loading", "error", "enableOutsideClickClose", "dataAutoId"],
+        "note": "confirmationValue + isCaseSensitive is the mechanism for 'type entity name to confirm' destructive-action modals required by CLAUDE.md §6."
+      },
+      {
+        "name": "CreateEditDocumentDialog",
+        "typesFile": "node_modules/@couchbasecloud/ui-platform/dist/components/create-edit-document-dialog/create-edit-document-dialog.d.ts",
+        "note": "Domain-specific (JSON document editor), not a general-purpose modal."
+      },
+      {
+        "name": "DeleteDocumentDialog",
+        "typesFile": "node_modules/@couchbasecloud/ui-platform/dist/components/delete-document-dialog/delete-document-dialog.d.ts",
+        "note": "Partial<ConfirmDialogProps> + bucketId/scopeId/collectionId/documentId. Pattern to copy for other 'delete X' confirm dialogs."
+      }
+    ]
+  }
+}
